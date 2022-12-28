@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block intercss %}
+
+ body{
+    margin:30px;
+    padding: 10px;
+ }
+ h1{
+    text-align: center;
+ }
+{% endblock %}
+
+{% block  body%}
+<h1> List of books</h1>
+<hr>
+<br>
+<table class="table mx-10">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ISBN No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Subtitle</th>
+        <th scope="col">Edition</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">Publication</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for book in booklist%}
+      <tr>
+        
+        <th scope="row">{{loop.index}}</th>
+        <td>{{ book.isbn_no }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.subtitle }}</td>
+        <td>{{ book.edition }}</td>
+        <td>{{ book.category }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.publication }}</td>
+        
+      </tr>
+      {% endfor %}
+      
+    </tbody>
+  </table>
+
+
+{% endblock %}

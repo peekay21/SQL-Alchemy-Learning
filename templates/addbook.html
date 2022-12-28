@@ -1,0 +1,108 @@
+{% extends 'index.html' %}
+
+{% block intercss%}
+
+.row{
+  margin: 10px;
+}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid">
+    <h1 class="content-justify-center" style="text-align:center"> Add New Book </h1>
+    <br>
+    <hr>
+    <form method="POST" action="{{ url_for('newbook')}}">
+    <h3> Book Details </h3>
+    <div class="form-group row">
+        <label for="title" class="col-sm-2 col-form-label">Name of the Book:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="title" name= "title" placeholder="Enter name of the book" required>
+        </div>
+    
+        <label for="isbn" class="col-sm-1 col-form-label">ISBN</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="isbn" placeholder="ISBN Number" name = "isbn_no">
+        </div>
+      </div>
+
+     
+      <div class="form-group row">
+        <label for="subtitle" class="col-sm-2 col-form-label">Subtitle of the book: </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="subtitle" name= "subtitle" placeholder="Subtitle of the book">
+        </div>
+    
+        <label for="edition" class="col-sm-1 col-form-label">Edition: </label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="edition" placeholder="Edition" name = "edition">
+        </div>
+      </div>
+
+
+
+      <div class="form-group row">
+        <label for="category" class="col-sm-2 col-form-label">Category: </label>
+        <div class="col-sm-2">
+          <select type="text" class="form-control" id="category" name= "category">
+            <option value="">Select category</option>
+            <option value ="Romantic" >Romantic</option>
+            <option value="Horror" >Horror</option>
+            <option value="Dramatic">Dramatic</option>
+          </select>
+        </div>
+    
+        <label for="price" class="col-sm-1 col-form-label">Price: </label>
+        <div class="col-sm-2">
+          <input type="number" class="form-control" id="price" placeholder="price" name = "price">
+        </div>
+
+        <label for="cover" class="col-sm-1 col-form-label">Cover: </label>
+        <div class="col-sm-2">
+          <select type="text" class="form-control" id="cover" name= "cover">
+            <option value="">Select Cover</option>
+            <option value="Paper Bound">Paper Bound</option>
+            <option value="Hard Bound">Hard Bound</option>
+            
+          </select>
+        </div>
+
+
+      </div>
+
+      <br>
+      <hr>
+      <h3> Publisher Details </h3>
+      <div class="form-group row">
+        <label for="publication" class="col-sm-2 col-form-label">Publisher Name: </label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="publication" name= "publication" placeholder="Publication of the book">
+        </div>
+    
+        <label for="place" class="col-sm-1 col-form-label">Place: </label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="place" placeholder="Place" name = "place">
+        </div>
+        <label for="country" class="col-sm-1 col-form-label">Country: </label>
+        <div class="col-sm-2">
+          <input type="text" class="form-control" id="country" placeholder="country" name = "country">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="year" class="col-sm-2 col-form-label">Year: </label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="year" name= "year" placeholder="Year">
+        </div>
+      </div>  
+      <br>  
+      <hr>
+      <div class="form-group row">
+        <input class="btn btn-primary center-block" style="text-align:center;" type="submit" value="ADD">
+      </div> 
+      
+</div>
+</form>
+{% endblock %}
